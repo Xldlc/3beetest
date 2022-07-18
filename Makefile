@@ -38,7 +38,7 @@ install:          ## Install the project in dev mode.
 .PHONY: install_ipykernel
 install_ipykernel:  ## Install the current venv as an ipython kernel
 	$(ENV_PREFIX)python -m ipykernel install --name threebee_venv --user
-	@echo "Installed ipython kernel threebee_venv"
+	@echo "Installed ipython kernel threebees_venv"
 
 
 .PHONY: fmt
@@ -48,16 +48,8 @@ fmt:              ## Format code using black & isort.
 	$(ENV_PREFIX)black -l 79 tests/
 
 
-.PHONY: lint
-lint:             ## Run pep8, black, mypy linters.
-	$(ENV_PREFIX)flake8 threebee/
-	$(ENV_PREFIX)black -l 79 --check threebee/
-	$(ENV_PREFIX)black -l 79 --check tests/
-	$(ENV_PREFIX)mypy --ignore-missing-imports threebee/
-
-
 .PHONY: test
-test: lint        ## Run tests and generate coverage report.
+test:         ## Run tests and generate coverage report.
 	$(ENV_PREFIX)pytest -v --cov-config .coveragerc --cov=threebee -l --tb=short --maxfail=1 tests/
 	$(ENV_PREFIX)coverage xml
 	$(ENV_PREFIX)coverage html
