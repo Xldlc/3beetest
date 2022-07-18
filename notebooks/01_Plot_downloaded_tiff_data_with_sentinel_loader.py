@@ -93,14 +93,16 @@ path_to_tiff = (
 
 # %%
 img = rasterio.open(path_to_tiff)
+img_data = img.read()[0]
 
 lat_center = 45.040048
 long_center = 10.133250
 
-plt.figure(figsize=(12,12))
+plt.figure(figsize=(16,12))
 plt.title(f"NDVI index centered at ({lat_center}, {long_center}), on the 2022-07-18")
-show(img)
+plt.imshow(img_data, cmap="jet")
 plt.savefig("2022_07_18_ndvi_index.png")
+plt.colorbar()
 plt.show()
 
 # %%
