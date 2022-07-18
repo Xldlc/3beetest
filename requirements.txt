@@ -1,3 +1,19 @@
+wheel
 ipykernel
 lxml
 pandas
+# sentinelloader  # Not really used but copied in the threebee package due to Segmentation faults
+Cython
+elementpath
+fiona
+shapely 
+cartopy
+rasterio 
+matplotlib
+python-dotenv
+ipywidgets
+georaster
+sentinelsat
+gdal
+geopandas
+pyproj
