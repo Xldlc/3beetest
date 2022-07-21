@@ -135,3 +135,6 @@ sentinelcache
 
 # Ignore all images
 *.png
+
+# VSCODE
+.vscode
