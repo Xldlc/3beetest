@@ -132,3 +132,6 @@ dmypy.json
 
 # Ignore the sentinelcache
 sentinelcache
+
+# Ignore all images
+*.png
