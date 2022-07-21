@@ -41,22 +41,22 @@ sl = Sentinel2Loader(
 )
 
 # Define a region centered on the given coordinates and download the history data to cache
-lat_center = 45.040048
-lat_min = lat_center - 0.2
-lat_max = lat_center + 0.2
+# lat_center = 45.040048
+lat_min = 44.94
+lat_max = 45.16
 
-long_center = 10.133250
-long_min = long_center - 0.2
-long_max = long_center + 0.2
+# long_center = 10.133250
+long_min = 9.13
+long_max = 10.49
 
 area = Polygon(
     [
-        (lat_max, long_min),
-        (lat_min, long_min),
-        (lat_min, long_max),
-        (lat_max, long_max),
+        (long_max, lat_min),
+        (long_min, lat_min),
+        (long_min, lat_max),
+        (long_max, lat_max),
     ]
 )
 
 # Download region history
-geoTiffs = sl.getRegionHistory(area, "NDVI", "60m", "2022-07-15", "2022-07-18", daysStep=1)
+geoTiffs = sl.getRegionHistory(area, "NDVI", "60m", "2022-04-01", "2022-07-20", daysStep=1)
